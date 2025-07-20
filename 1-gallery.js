@@ -11,4 +11,4 @@ import"./assets/modulepreload-polyfill-B5Qt9EMX.js";import{i as r,S as n}from"./
                 </div>
             </div>
             `).join("");const l=new n(".gallery a",{captionsData:"alt",captionDelay:250,scrollZoom:!1});t.style.display="none",l.refresh()}).catch(e=>{console.error("There has been a problem with your fetch operation:",e)})};
-//# sourceMappingURL=page-2.js.map
+//# sourceMappingURL=1-gallery.js.map
