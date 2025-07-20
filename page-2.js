@@ -11,4 +11,4 @@ import"./assets/modulepreload-polyfill-B5Qt9EMX.js";import{i as a,S as n}from"./
                 </div>
             </div>
             `).join("");const l=new n(".gallery a",{captionsData:"alt",captionDelay:250,scrollZoom:!1});s.style.display="none",l.refresh()}).catch(e=>{a.error({title:"Error fetching images",message:e.message,position:"topRight"})})};
-//# sourceMappingURL=1-gallery.js.map
+//# sourceMappingURL=page-2.js.map
