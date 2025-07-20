@@ -1,0 +1,6 @@
+import"./assets/modulepreload-polyfill-B5Qt9EMX.js";import{i as a,S as s}from"./assets/vendor-5ObWk2rO.js";const n=document.querySelector(".search__input"),l=document.querySelector("button"),c="https://pixabay.com/api/",i="51405518-123002757a861b136415ef994",h=document.querySelector(".gallery");l.addEventListener("click",()=>{const t=n.value.trim();t?m(t):alert("Please enter a search term.")});const m=t=>{const r=`${c}?key=${i}&q=${encodeURIComponent(t)}&image_type=photo&per_page=12`;fetch(r).then(e=>{if(!e.ok)throw new Error("Network response was not ok");return e.json()}).then(e=>{if(e.hits.length===0){a.error({title:"No results found",message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight"});return}console.log(e.hits),h.innerHTML=e.hits.map(o=>`
+            <a href="${o.largeImageURL}" class="gallery__item">
+                <img src="${o.webformatURL}" alt="${o.tags}" class="gallery__image" />
+            </a>
+            `).join(""),new s(".gallery a",{captionsData:"alt",captionDelay:250,scrollZoom:!1}).refresh()}).catch(e=>{console.error("There has been a problem with your fetch operation:",e)})};
+//# sourceMappingURL=page-2.js.map
