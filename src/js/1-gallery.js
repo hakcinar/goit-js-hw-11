@@ -23,7 +23,7 @@ const fetchImages = query => {
   loader.style.display = 'block'; // Show the loader
   const url = `${baseUrl}?key=${apiKey}&q=${encodeURIComponent(
     query
-  )}&image_type=photo`;
+  )}&image_type=photo&orientation=horizontal&safe_search=true`;
 
   fetch(url)
     .then(response => {
@@ -43,7 +43,6 @@ const fetchImages = query => {
         });
         return;
       }
-      console.log(data.hits);
       const images = (gallery.innerHTML = data.hits
         .map(
           hit => `
@@ -70,9 +69,10 @@ const fetchImages = query => {
       lightbox.refresh();
     })
     .catch(error => {
-      console.error(
-        'There has been a problem with your fetch operation:',
-        error
-      );
+      iziToast.error({
+        title: 'Error fetching images',
+        message: error.message,
+        position: 'topRight',
+      });
     });
 };
